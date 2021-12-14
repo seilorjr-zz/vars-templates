@@ -6,7 +6,7 @@ parameters:
 stages:
 - stage: deploy
   variables:          
-      - template: vars-${{ parameters.environment }}.yaml
+      - template: vars-${{ parameters.environment }}.yml
   jobs:
   - deployment: DeploymentJob__${{ parameters.environment }}
     displayName: Deploy ${{ parameters.environment }}    
