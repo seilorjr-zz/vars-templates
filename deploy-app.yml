@@ -14,7 +14,6 @@ stages:
     strategy:
       runOnce:
         deploy:
-          steps:
-          - displayName: 'Deploy'
-            script: 'Deploy app to ${{ variables.environmentName }}!'
+          steps:          
+          - script: 'Deploy app to ${{ variables.environmentName }}!'
             
