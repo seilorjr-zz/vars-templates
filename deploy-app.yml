@@ -18,4 +18,8 @@ stages:
           - script: echo my first deployment ${{ variables.environmentName }} from variables
           - script: echo '$(versionNumber)' from global variables
           - script: echo my first deployment ${{ parameters.environment }}  from parameters
+          – task: Bash@3
+            inputs:
+              targetType: 'inline'
+              script: 'env | sort'
             
