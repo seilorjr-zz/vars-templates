@@ -16,6 +16,6 @@ stages:
         deploy:
           steps:           
           - script: echo my first deployment ${{ variables.environmentName }} from variables
-          - script: echo my first deployment ${{ variables.versionNumber }} from variables
+          - script: echo my first deployment ${{ versionNumber }} from variables
           - script: echo my first deployment ${{ parameters.environment }}  from parameters
             
