@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  - template: vars-global.yaml  
+  - template: vars-global.yml
 
 steps:
 - script: echo Hello, world!
