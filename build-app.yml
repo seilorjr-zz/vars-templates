@@ -10,6 +10,7 @@ stages:
         echo Add other tasks to build, test, and deploy your project.
         echo See https://aka.ms/yaml
       displayName: 'Run a multi-line script'
-    - powershell: Write-Host "##vso[task.setvariable variable=versionNumber]1.1.0"     
+    - powershell: Write-Host "##vso[task.setvariable variable=versionNumber;isOutput=true]1.1.0"
+      name: versionnumber
       displayName: write variable=versionNumber
     - script: echo '$(versionNumber)' from global variables  
