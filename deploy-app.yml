@@ -7,6 +7,8 @@ stages:
 - stage: deploy_${{ parameters.environment }}
   variables:          
     - template: vars-${{ parameters.environment }}.yml
+    - name: version
+      value: $[ stageDependencies.build.build.outputs['versionnumber.versionNumber'] ]
   jobs:
   - deployment: DeploymentJob__${{ parameters.environment }}
     displayName: Deploy ${{ parameters.environment }}    
@@ -16,7 +18,7 @@ stages:
         deploy:
           steps:           
           - script: echo my first deployment ${{ variables.environmentName }} from variables
-          - script: echo '$(versionNumber)' from global variables
+          - script: echo ${{ variables.version }} 
           - script: echo my first deployment ${{ parameters.environment }}  from parameters
           - task: Bash@3
             inputs:
