@@ -12,7 +12,11 @@ stages:
   - template: deploy-app.yml
     parameters:
       environment: dev
+      DependsOn: build
   - template: deploy-app.yml
     parameters:
-      environment: qa       
+      environment: qa
+      DependsOn: 
+      - build
+      - deploy_dev
 
