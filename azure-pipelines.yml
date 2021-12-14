@@ -17,6 +17,6 @@ stages:
     parameters:
       environment: qa
       DependsOn: 
-      - build
       - deploy_dev
+      - build   
 
