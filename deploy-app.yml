@@ -4,7 +4,7 @@ parameters:
   default: ''
 
 stages:
-- stage: deploy
+- stage: deploy_${{ parameters.environment }}
   variables:          
       - template: vars-${{ parameters.environment }}.yml
   jobs:
