@@ -11,9 +11,9 @@ stages:
   - deployment: DeploymentJob__${{ parameters.environment }}
     displayName: Deploy ${{ parameters.environment }}    
     environment: ${{ variables.environmentName }}
-    strategy:
+    strategy:    
       runOnce:
         deploy:
-          steps:          
-          - script: 'Deploy app to ${{ variables.environmentName }}!'
+          steps:           
+          - script: echo my first deployment
             
