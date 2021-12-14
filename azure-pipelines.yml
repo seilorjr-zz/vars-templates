@@ -12,5 +12,5 @@ stages:
   jobs:
     - job: build
       steps:
-        - template: build.yaml
+        - template: build.yml
 
