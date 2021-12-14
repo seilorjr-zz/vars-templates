@@ -15,5 +15,6 @@ stages:
       runOnce:
         deploy:
           steps:
-          - script: Deploy appp!
-            displayName: 'Deploy'
+          - displayName: 'Deploy'
+            script: 'Deploy app to ${{ variables.environmentName }}!'
+            
