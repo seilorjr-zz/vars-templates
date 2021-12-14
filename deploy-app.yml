@@ -8,7 +8,7 @@ stages:
   variables:          
     - template: vars-${{ parameters.environment }}.yml
     - name: version
-      value: $[ stageDependencies.build.build.outputs['build.versionnumber.versionNumber'] ]    
+      value: $[ stageDependencies.build.build.outputs['versionnumber.versionNumber'] ]    
   jobs:
   - deployment: DeploymentJob__${{ parameters.environment }}
     displayName: Deploy ${{ parameters.environment }}    
