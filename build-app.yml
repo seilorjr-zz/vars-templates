@@ -1,8 +1,8 @@
 stages:
 - stage: build
   jobs:
-    - job: build
-      steps:
+  - job: build
+    steps:
     - script: echo Hello, world!
       displayName: 'Run a one-line script'
 

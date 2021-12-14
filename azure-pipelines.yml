@@ -8,5 +8,5 @@ variables:
   - template: vars-global.yml
 
 stages:
-  - template: build.yml
+  - template: build-app.yml
 
