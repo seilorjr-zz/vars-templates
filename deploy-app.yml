@@ -2,15 +2,12 @@ parameters:
 - name: environment
   type: string
   default: ''
-- name: environment
-  type: string
-  default: ''  
-  
-  
+- name: DependsOn
+  type: object
 
 stages:
 - stage: deploy_${{ parameters.environment }}
-  dependsOn: '${{ parameters.DependsOn }}'
+  dependsOn: build
   variables:          
     - template: vars-${{ parameters.environment }}.yml
     - name: version
