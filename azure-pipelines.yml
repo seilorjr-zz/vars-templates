@@ -11,5 +11,8 @@ stages:
   - template: build-app.yml
   - template: deploy-app.yml
     parameters:
-      environment: dev  
+      environment: dev
+  - template: deploy-app.yml
+    parameters:
+      environment: qa       
 
