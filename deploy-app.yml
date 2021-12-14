@@ -5,6 +5,7 @@ parameters:
 
 stages:
 - stage: deploy_${{ parameters.environment }}
+  dependsOn: build
   variables:          
     - template: vars-${{ parameters.environment }}.yml
     - name: version
