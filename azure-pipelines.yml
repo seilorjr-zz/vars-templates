@@ -9,4 +9,7 @@ variables:
 
 stages:
   - template: build-app.yml
+  - template: deploy-app.yml
+    parameters:
+      environment: dev  
 

@@ -1,0 +1,19 @@
+parameters:
+- name: environment
+  type: string
+  default: ''''
+
+stages:
+- stage: deploy
+  variables:          
+      - template: vars-${{ env }}.yaml
+  jobs:
+  - deployment: DeploymentJob
+    pool:
+    environment: ${{ variables.environmentName }}
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+             - script: Deploy appp!
+               displayName: 'Deploy'
