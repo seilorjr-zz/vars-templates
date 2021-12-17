@@ -1,10 +1,11 @@
 stages:
-- stage: build
-  variables:          
-    - template: local-var.yml
+- stage: build  
   jobs:
   - job: build
+    variables:          
+    - template: local-var.yml
     steps:
+    
     - script: echo Hello, world!
       displayName: 'Run a one-line script'
 
