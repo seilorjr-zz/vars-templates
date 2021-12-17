@@ -3,7 +3,7 @@ stages:
   jobs:
   - job: build
     variables:          
-    - template: local-var.yml@current
+    - template: ./localfolder/local-var.yml@current
     steps:
     
     - script: echo Hello, world!
