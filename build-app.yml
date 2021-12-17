@@ -1,5 +1,7 @@
 stages:
 - stage: build
+  variables:          
+    - template: local-var.yml
   jobs:
   - job: build
     steps:
