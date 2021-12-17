@@ -8,6 +8,9 @@ stages:
     
     - script: echo Hello, world!
       displayName: 'Run a one-line script'
+    
+    - script: echo my local var ${{ variables.mylocalvar }} from my local var
+      displayName: 'Run a one-line script'
 
     - script: |
         echo Add other tasks to build, test, and deploy your project.
