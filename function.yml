@@ -1,0 +1,20 @@
+parameters:
+- name: environment
+  type: string
+  default: ''
+  
+stages:
+- stage: function
+  variables:          
+    - template: vars-${{ parameters.environment }}.yml
+  jobs:
+  - job: function    
+    steps:    
+    - script: echo Hello my function, world!
+      displayName: 'Run a one-line script'
+    - task: AzureFunctionAppContainer@1
+      displayName: 'Azure Function App on Container Deploy: seilor'
+      inputs:
+        azureSubscription: ${{ variables.mysubscription }}
+        appName: seilor
+        imageName: 'azure-functions/dotnet:3.0-appservice-quickstart'  
