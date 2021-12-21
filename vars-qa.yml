@@ -1,2 +1,3 @@
 variables:
   environmentName: "qa"
+  mysubscription: 'rg-seilor-aks'
