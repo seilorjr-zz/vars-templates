@@ -5,7 +5,7 @@ azure devops yaml pipelines (templates)
 Example of one deployment template for many enviroments
 
 Example of usage
-
+```
 resources:
   repositories:
 
@@ -44,6 +44,8 @@ stages:
       environment: qa
       DependsOn: 
       - deploy_dev
-      - build   
+      - build
+```      
+
 
 
