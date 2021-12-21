@@ -10,6 +10,7 @@ stages:
   dependsOn: ${{ parameters.DependsOn }}
   variables:          
     - template: vars-${{ parameters.environment }}.yml
+    - template: ./localfolder/local-var.yml@current
     - name: version
       value: $[ stageDependencies.build.build.outputs['versionnumber.versionNumber'] ]    
   jobs:
@@ -19,7 +20,9 @@ stages:
     strategy:    
       runOnce:
         deploy:
-          steps:           
+          steps:
+          - script: echo my local var ${{ variables.mylocalvar }} from my local var
+            displayName: 'Run a one-line script'
           - script: echo my first deployment ${{ variables.environmentName }} from variables
           - script: echo $(version)
             env:
